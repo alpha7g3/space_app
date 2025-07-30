@@ -34,7 +34,7 @@ if selected_feature == "Astronomy Picture of the Day":
         if response.status_code == 200:
             data = response.json()
             if data["media_type"] == "image":
-                st.image(data.get("url"), caption=data.get("title"), use_column_width=True)
+                st.image(data.get("url"), caption=data.get("title"), use_container_width=True)
             elif data["media_type"] == "video":
                 st.video(data.get("url"))
             else:
@@ -63,7 +63,7 @@ elif selected_feature == "Mars Rover Photos":
             if photos:
                 for photo in photos[:10]:  # Limit to 10 for performance
                     st.image(photo["img_src"], caption=f"{photo['camera']['full_name']} ({photo['earth_date']})",
-                             use_column_width=True)
+                             use_container_width=True)
             else:
                 st.warning("No photos found for that Sol. Try a different day.")
         else:
