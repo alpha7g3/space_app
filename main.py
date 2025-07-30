@@ -3,8 +3,6 @@ import folium
 from streamlit_folium import st_folium
 import requests
 from datetime import date, datetime, timezone
-import os
-import streamlit.web.bootstrap
 
 # --- CONFIGURATION ---
 st.set_page_config(page_title='🚀 NASA Space Explorer', layout='centered')
