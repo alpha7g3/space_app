@@ -3,6 +3,8 @@ import folium
 from streamlit_folium import st_folium
 import requests
 from datetime import date, datetime, timezone
+import os
+import streamlit.web.bootstrap
 
 # --- CONFIGURATION ---
 st.set_page_config(page_title='🚀 NASA Space Explorer', layout='centered')
@@ -128,3 +130,10 @@ with st.expander("ℹ️ About This App"):
 
         Built with ❤️ using Streamlit and curiosity.
     """)
+
+port = int(os.environ.get("PORT", 8501))
+script_path = "main.py"  # or whatever your actual file is
+
+streamlit.web.bootstrap.run(script_path, [], {})
+
+
